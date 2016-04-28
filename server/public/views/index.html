@@ -29,5 +29,16 @@
     <button class="btn btn-danger" ng-click="sendData()">Submit</button>
     Power:<select ng-model="answer" ng-options="thing for thing in options"></select>
   </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="well col-md-3" ng-repeat="hero in heroes">
+      Alias: {{hero.alias}}
+      FirstName: {{hero.firstName}}
+      LastName: {{hero.lastName}}
+      City: {{hero.city}}
+      Power: {{hero.powerName}}
+
+</div>
   </body>
 </html>

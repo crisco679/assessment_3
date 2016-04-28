@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var Hero = require('../../models/createHero');
 
-router.post('/', function(request,response){
+router.post('/hero', function(request,response){
   console.log(request.body);
   Hero.create(request.body, function(err){
     if(err){
@@ -12,9 +12,9 @@ router.post('/', function(request,response){
       response.sendStatus(200);
     }
   })
-  response.sendStatus(200);
+
 })
-router.get('/hero', function(request, response){
+router.get('/heroes', function(request, response){
   return Hero.find({}).exec(function(err, heroes){
     if(err){
       console.log('Error', err);
