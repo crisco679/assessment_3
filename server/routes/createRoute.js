@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var Hero = require('../../models/createHero');
 
-router.post('/hero', function(request,response){
+router.post('/heroes', function(request,response){
   console.log(request.body);
   Hero.create(request.body, function(err){
     if(err){
@@ -22,6 +22,7 @@ router.get('/heroes', function(request, response){
     response.send(JSON.stringify(heroes));
   })
 })
+
 
 
 module.exports = router;

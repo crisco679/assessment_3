@@ -7,7 +7,7 @@ app.controller('HeroController', ['$http', '$scope', function($http, $scope){
 //posting to database
 
 var fetchHeroes = function(){
-  return $http.get('/heroes').then(function(response){
+  return $http.get('/hero/heroes').then(function(response){
     console.log(response);
     if(response.status !== 200){
       console.log('Failed to fetch heroes');
@@ -19,22 +19,10 @@ var fetchHeroes = function(){
 };
 $scope.addHero = function(hero){
   console.log('add hero function', hero);
-  return $http.post('/hero', hero).then(fetchHeroes());
+  return $http.post('/hero/heroes', hero).then(fetchHeroes());
 };
 fetchHeroes();
-}]);
-
-
-
-//   $scope.sendData = function(){
-//     $http.post('/hero', $scope.data).then(function(response){
-//      console.log(response);
-//      $scope.data = {};
-//    });
-//   }
-// $scope.getHeroes = function(){
-//   $http.get('/hero').then(function(response){
-//     $scope.heroes=response.data;
-//     return response.data;
-//   })
+// $scope.removeHero = function(hero){
+//
 // }
+}]);

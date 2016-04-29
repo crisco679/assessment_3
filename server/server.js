@@ -21,7 +21,7 @@ MongoDB.once('open', function(){
 })
 //Routes
 app.use('/', index);
-app.use('/', hero);
+app.use('/hero', hero);
 
 
 //Server
